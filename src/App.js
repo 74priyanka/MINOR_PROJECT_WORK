@@ -1,10 +1,10 @@
 import "./App.css";
-import HomePage from "./components/HomePage";
+import { Outlet } from "react-router";
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
+      <Outlet />
     </div>
   );
 }
