@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyledAttendance } from "./style";
 import Card from "../Card";
 import DynamicHeader from "../DynamicHeader";
+import WebCam from "../WebCam";
 
 import { useNavigate } from "react-router";
 
 const Attendance = () => {
   const navigate = useNavigate();
+  const [showWebCam, setShowWebCam] = useState(false);
 
   const handleMarkAttendance = () => {
-    navigate("/Attendance");
+    setShowWebCam(true);
+  };
+
+  const handleCapture = () => {
+    // logic to Send the captured image data to the backend
+    setShowWebCam(false); // Hide the webcam component after capturing
   };
 
   const handleViewAttendance = () => {
@@ -18,11 +25,14 @@ const Attendance = () => {
   return (
     <StyledAttendance className="attendance">
       <DynamicHeader headingName="ATTENDANCE" />
-
-      <div className="card-container">
-        <Card name="Mark my attendance" onClick={handleMarkAttendance} />
-        <Card name="View my attendance" onClick={handleViewAttendance} />
-      </div>
+      {showWebCam ? (
+        <WebCam onCapture={handleCapture} />
+      ) : (
+        <div className="card-container">
+          <Card name="Mark my attendance" onClick={handleMarkAttendance} />
+          <Card name="View my attendance" onClick={handleViewAttendance} />
+        </div>
+      )}
     </StyledAttendance>
   );
 };
