@@ -1,10 +1,34 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eafdfc;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the App takes full height */
+}
+
+.Header {
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.content {
+  margin: auto;
+  padding: 20px;
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
 }
 
 @media (prefers-reduced-motion: no-preference) {

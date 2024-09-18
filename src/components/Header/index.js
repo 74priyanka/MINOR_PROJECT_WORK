@@ -1,9 +1,54 @@
 import React from "react";
 import { StyledHeader } from "./style";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import face_recognition from "../../assets/face_recognition.png";
 
 const Header = () => {
+  const location = useLocation();
+
+  const renderConditionalLinks = () => {
+    if (location.pathname === "/") {
+      return (
+        <>
+          <li>
+            <NavLink to="/login" activeClassName="active" className="li-item">
+              Login
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/register"
+              activeClassName="active"
+              className="li-item"
+            >
+              Signup
+            </NavLink>
+          </li>
+        </>
+      );
+    } else if (location.pathname === "/Employee") {
+      return (
+        <li>
+          <NavLink to="/employee" activeClassName="active" className="li-item">
+            EMPLOYEE
+          </NavLink>
+        </li>
+      );
+    } else if (location.pathname === "/attendance") {
+      return (
+        <li>
+          <NavLink
+            to="/attendance"
+            activeClassName="active"
+            className="li-item"
+          >
+            ATTENDANCE
+          </NavLink>
+        </li>
+      );
+    }
+    return null;
+  };
   return (
     <StyledHeader>
       <div className="logo-container">
@@ -11,16 +56,17 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul className="nav-items-list">
-          <li>Home</li>
-          <li>About</li>
-
-          <li>Login</li>
-          <li>Signup</li>
-          {/* <li><Link to="/home">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-
-          <li><Link to="/contact">Login</Link></li>
-          <li><Link to="/register">Signup</Link></li> */}
+          <li>
+            <NavLink to="/" activeClassName="active" className="li-item">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" activeClassName="active" className="li-item">
+              About
+            </NavLink>
+          </li>
+          {renderConditionalLinks()}
         </ul>
       </div>
     </StyledHeader>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledWebCam = styled.div`
   margin: auto;
-  width: 64%;
+  width: 100%;
   gap: 20px;
   height: 100%;
   display: flex;

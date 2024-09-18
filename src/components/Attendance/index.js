@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { StyledAttendance } from "./style";
 import Card from "../Card";
-import DynamicHeader from "../DynamicHeader";
 import WebCam from "../WebCam";
 
 import { useNavigate } from "react-router";
@@ -23,8 +22,7 @@ const Attendance = () => {
     navigate("/Attendance");
   };
   return (
-    <StyledAttendance className="attendance">
-      <DynamicHeader headingName="ATTENDANCE" />
+    <StyledAttendance>
       {showWebCam ? (
         <WebCam onCapture={handleCapture} />
       ) : (

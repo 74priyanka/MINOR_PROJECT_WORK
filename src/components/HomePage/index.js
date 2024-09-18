@@ -1,6 +1,5 @@
 import React from "react";
 import { StyledHomePage } from "./style";
-import Header from "../Header";
 import Card from "../Card";
 import { useNavigate } from "react-router";
 
@@ -16,8 +15,7 @@ const HomePage = () => {
   };
 
   return (
-    <StyledHomePage className="home-page">
-      <Header />
+    <StyledHomePage>
       <div className="card-container">
         <Card name="Employee" onClick={handleEmployee} />
         <Card name="Student" onClick={handleStudent} />

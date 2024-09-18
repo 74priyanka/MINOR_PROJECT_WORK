@@ -1,7 +1,6 @@
 import React from "react";
 import { StyledEmployee } from "./style";
 import Card from "../Card";
-import DynamicHeader from "../DynamicHeader";
 
 import { useNavigate } from "react-router";
 
@@ -9,16 +8,14 @@ const Employee = () => {
   const navigate = useNavigate();
 
   const handleOfficeWork = () => {
-    navigate("/Attendance");
+    navigate("/attendance");
   };
 
   const handleRemoteWork = () => {
-    navigate("/Attendance");
+    navigate("/attendance");
   };
   return (
-    <StyledEmployee className="employee">
-      <DynamicHeader headingName="EMPLOYEE" />
-
+    <StyledEmployee>
       <div className="card-container">
         <Card name="Working from Office" onClick={handleOfficeWork} />
         <Card name="Working Remotely" onClick={handleRemoteWork} />

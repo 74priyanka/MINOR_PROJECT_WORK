@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledCard = styled.div`
-  width: 40%;
   display: flex;
   justify-content: center;
 
@@ -10,10 +9,10 @@ export const StyledCard = styled.div`
     border-radius: 10px;
     background-color: #91d8e4;
     text-align: center;
-    width: 84%;
+    width: 100%;
     margin: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 48px;
+    padding: 76px;
     font-size: 28px;
     font-weight: bold;
     color: #333;
