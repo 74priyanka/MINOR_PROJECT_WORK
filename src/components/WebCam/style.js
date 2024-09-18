@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const StyledWebCam = styled.div`
-  width: 100%;
+  margin: auto;
+  width: 64%;
+  gap: 20px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -10,7 +12,6 @@ export const StyledWebCam = styled.div`
 
   .webcam {
     width: 100%;
-    height: auto;
     max-height: 80vh; /* Adjust as needed to fit within the viewport */
     object-fit: cover; /* Ensures the video covers the container */
   }
