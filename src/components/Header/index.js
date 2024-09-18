@@ -46,6 +46,18 @@ const Header = () => {
           </NavLink>
         </li>
       );
+    } else if (location.pathname === "/workingRemotely") {
+      return (
+        <li>
+          <NavLink
+            to="/workingRemotely"
+            activeClassName="active"
+            className="li-item"
+          >
+            WorkingRemotely
+          </NavLink>
+        </li>
+      );
     }
     return null;
   };

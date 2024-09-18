@@ -4,6 +4,7 @@ import App from "../App";
 import HomePage from "../components/HomePage";
 import Employee from "../components/Employee";
 import Attendance from "../components/Attendance";
+import WorkingRemotely from "../components/WorkingRemotely";
 import Error from "./Error";
 
 const appRouter = createBrowserRouter([
@@ -22,6 +23,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/attendance",
         element: <Attendance />,
+      },
+      {
+        path: "/workingRemotely",
+        element: <WorkingRemotely />,
       },
     ],
     errorElement: <Error />,

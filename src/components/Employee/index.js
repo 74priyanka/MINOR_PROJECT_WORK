@@ -12,7 +12,7 @@ const Employee = () => {
   };
 
   const handleRemoteWork = () => {
-    navigate("/attendance");
+    navigate("/workingRemotely");
   };
   return (
     <StyledEmployee>
